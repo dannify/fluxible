@@ -164,6 +164,7 @@ FluxContext.prototype._createSubActionContext = function createSubActionContext(
      * clone with a new stack & new id every time a newActionContext is created.
      */
     var newActionContext = Object.assign({}, this.getActionContext(), {
+        displayName: displayName,
         stack: (parentActionContext.stack || []).concat([displayName]),
         rootId: (parentActionContext.rootId) || generateUUID()
     });

@@ -1,5 +1,5 @@
 {
-  "name": "fluxible-plugin-perf",
+  "name": "fluxible-plugin-devtools",
   "version": "0.1.0",
   "description": "A plugin for Fluxible applications to provide debugging information",
   "main": "index.js",
@@ -10,7 +10,9 @@
   "scripts": {
     "test": "../../node_modules/.bin/mocha tests/unit/ --recursive --compilers js:babel-register --reporter spec",
     "cover": "../../node_modules/.bin/istanbul cover --dir artifacts -- ../../node_modules/.bin/_mocha tests/unit/ --recursive --compilers js:babel-register --reporter spec",
-    "lint": "../../node_modules/.bin/eslint lib/ tests/ index.js"
+    "lint": "../../node_modules/.bin/eslint src/ index.js",
+    "dist": "gulp dist -p fluxible-plugin-devtools",
+    "prepublish": "npm run dist"
   },
   "dependencies": {
     "debug": "^2.0.0"
@@ -28,6 +30,7 @@
     "flux",
     "react",
     "fluxible",
-    "performance"
+    "performance",
+    "devtools"
   ]
 }
